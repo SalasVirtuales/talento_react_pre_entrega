@@ -8,9 +8,9 @@ function HeroSection() {
         <div className="row">
           <div className="col-md-6 col-lg-5">
             <div className="hero-content p-4 p-md-0">
-              <h1 className="display-3 fw-bold">SPEEDCAT BALLET</h1>
-              <p className="lead mb-4">REWRITE THE CLASSICS</p>
-              <a href="#" className="btn btn-light btn-lg rounded-0 text-uppercase">Comprar</a>
+              <h1 className="display-3 fw-bold">Titulo Banner Cabecera</h1>
+              <p className="lead mb-4">Subtitulo Banner Cabecera</p>
+              <a href="#" className="btn btn-light btn-lg rounded-0 text-uppercase">OFERTAS</a>
             </div>
           </div>
         </div>

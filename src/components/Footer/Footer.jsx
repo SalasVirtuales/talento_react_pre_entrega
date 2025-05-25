@@ -47,7 +47,7 @@ function Footer() {
         </div>
         <hr className="my-4" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}/> {/* Added inline style for HR visibility on dark bg */}
         <div className="text-center">
-          <small>&copy; <span id="currentYear">{currentYear}</span> PUMA SE. Todos los derechos reservados.</small>
+          <small>&copy; <span id="currentYear">{currentYear}</span> LEON S.A. Todos los derechos reservados.</small>
         </div>
       </div>
     </footer>
