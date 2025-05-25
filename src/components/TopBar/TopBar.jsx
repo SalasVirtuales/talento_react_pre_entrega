@@ -1,5 +1,6 @@
 import React from 'react';
-import './TopBar.css'; // We'll create this next
+import { Link } from 'react-router-dom'; // Import Link
+import './TopBar.css';
 
 function TopBar() {
   return (
@@ -13,14 +14,14 @@ function TopBar() {
             <small>3 y 6 Cuotas Sin Interés con monto mínimo</small>
           </div>
           <div className="col-md-4 text-md-end">
-            <small className="me-3"><a href="#" className="text-dark text-decoration-none">SEGUÍ TU ENVÍO</a></small>
-            <small className="me-3"><a href="#" className="text-dark text-decoration-none">TIENDAS</a></small>
-            <small><a href="#" className="text-dark text-decoration-none">DEVOLUCIONES</a></small>
+            {/* Assuming these are placeholders for now, or could be actual routes if defined */}
+            <small className="me-3"><Link to="#" className="text-dark text-decoration-none">SEGUÍ TU ENVÍO</Link></small>
+            <small className="me-3"><Link to="#" className="text-dark text-decoration-none">TIENDAS</Link></small>
+            <small><Link to="#" className="text-dark text-decoration-none">DEVOLUCIONES</Link></small>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
 export default TopBar;

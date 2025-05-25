@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom'; // Import routing components
 import Layout from './components/Layout/Layout';
-import HeroSection from './components/HeroSection/HeroSection';
-import ProductListingPage from './components/ProductListingPage/ProductListingPage';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+// Import Page Components
+import HomePage from './pages/HomePage';
+import CartPage from './pages/CartPage';
+import LoginPage from './pages/LoginPage';
+import NotFoundPage from './pages/NotFoundPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import ProfilePage from './pages/ProfilePage'; // Import ProfilePage
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'; // Import ProtectedRoute
+
+// Keep ShoppingCart component import if CartPage uses it directly,
+// or if a cart summary is still desired in the Layout (e.g. navbar).
+// For now, CartPage will render the full ShoppingCart.
+// import ShoppingCart from './components/ShoppingCart/ShoppingCart'; 
+
 import './App.css';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  // Mock authentication state - will be expanded later
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
 
   const addToCart = (product) => {
     setCartItems(prevItems => {
@@ -27,7 +41,7 @@ function App() {
   const updateQuantity = (productId, newQuantity) => {
     setCartItems(prevItems => {
       if (newQuantity <= 0) {
-        return prevItems.filter(item => item.id !== productId); // Remove item if quantity is 0 or less
+        return prevItems.filter(item => item.id !== productId);
       }
       return prevItems.map(item =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
@@ -35,23 +49,46 @@ function App() {
     });
   };
 
+  // Mock login/logout functions - to be properly implemented with LoginPage/ProfilePage later
+  const login = () => setIsAuthenticated(true);
+  const logout = () => setIsAuthenticated(false);
+
   return (
-    <Layout>
-      <HeroSection />
-      <div className="container-fluid px-md-5 mt-4">
-        <div className="row">
-          <div className="col-lg-9">
-            <ProductListingPage addToCart={addToCart} />
-          </div>
-          <div className="col-lg-3">
-            <ShoppingCart
-              cartItems={cartItems}
-              removeFromCart={removeFromCart}
-              updateQuantity={updateQuantity}
+    // Pass isAuthenticated and logout to Layout
+    <Layout isAuthenticated={isAuthenticated} logout={logout}>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<HomePage addToCart={addToCart} />} 
+        />
+        <Route 
+          path="/cart" 
+          element={
+            <CartPage 
+              cartItems={cartItems} 
+              removeFromCart={removeFromCart} 
+              updateQuantity={updateQuantity} 
             />
-          </div>
-        </div>
-      </div>
+          } 
+        />
+        <Route 
+          path="/login" 
+          element={<LoginPage login={login} isAuthenticated={isAuthenticated} />} 
+        />
+        <Route 
+          path="/product/:productId" 
+          element={<ProductDetailPage addToCart={addToCart} />} 
+        />
+        <Route 
+          path="/profile" 
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProfilePage />
+            </ProtectedRoute>
+          } 
+        />
+        <Route path="*" element={<NotFoundPage />} /> {/* Catch-all for 404 */}
+      </Routes>
     </Layout>
   );
 }
