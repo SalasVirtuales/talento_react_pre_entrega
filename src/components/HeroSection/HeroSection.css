@@ -1,25 +1,60 @@
+/* src/components/HeroSection/HeroSection.css */
 .hero-section {
-  /* Replace with an actual image URL or a more dynamic placeholder for the background */
-  background-image: url('https://placehold.co/1920x600/333333/FFFFFF?text=Hero+Image+Placeholder');
-  background-size: cover;
-  background-position: center;
+  /* Modern diagonal gradient background */
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   min-height: 60vh; /* Adjust as needed */
-  color: white; /* Ensure text is white as per original HTML */
+  color: white; /* Ensure text is white */
+  display: flex; /* Already in JSX, ensure it's here if JSX changes */
+  align-items: center; /* Already in JSX */
+  justify-content: center; /* Already in JSX */
+  text-align: center; /* Center text for mobile */
+}
+
+/* Align text to the left on medium and up screens, if not already handled by Bootstrap classes */
+@media (min-width: 768px) {
+  .hero-section {
+    text-align: left;
+    justify-content: flex-start; /* Align content to the start on larger screens */
+  }
 }
 
 .hero-content {
-  /* Optional: Add a semi-transparent overlay to make text more readable if background is busy */
-  /* background-color: rgba(0, 0, 0, 0.3); */
-  /* padding: 20px; */ /* Already handled by bootstrap classes mostly */
-  border-radius: 5px; /* Optional: if you want rounded corners for the content box */
+  padding: 2rem; /* More padding for content block */
+  /* background-color: rgba(0, 0, 0, 0.2); Optional: subtle overlay for text pop */
+  border-radius: 8px; /* Slightly rounded corners for the content box */
 }
 
-/* Specific styling for h1 and p if Bootstrap defaults aren't enough for "modern/llamativo" */
-.hero-content h1 {
-    /* Example: Add text shadow for better readability or style */
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+.hero-content h1.display-3 {
+  font-weight: 700; /* Bold for impact */
+  font-size: calc(1.8rem + 2.5vw); /* Responsive font size */
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+}
+
+.hero-content p.lead {
+  font-size: calc(1rem + 0.5vw); /* Responsive font size */
+  font-weight: 400; /* Lighter than heading */
+  margin-bottom: 2rem; /* More space before button */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content .btn-light {
-    /* Ensure the button stands out */
+  background-color: #FFFFFF; /* White button */
+  color: var(--primary-color); /* Text color matching primary theme */
+  border: 2px solid #FFFFFF; /* White border */
+  padding: 0.75rem 2rem; /* Larger button */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 50px; /* Pill-shaped button */
+  transition: all 0.3s ease;
+}
+
+.hero-content .btn-light:hover,
+.hero-content .btn-light:focus {
+  background-color: transparent; /* Transparent background on hover */
+  color: #FFFFFF; /* White text on hover */
+  border-color: #FFFFFF; /* Keep white border */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }

@@ -1,0 +1,127 @@
+/* src/components/ShoppingCart/ShoppingCart.css */
+.shopping-cart {
+  background-color: var(--card-background-color); /* Use card background for consistency */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem; /* Increased padding */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  position: sticky; /* Make cart sticky if it's in a sidebar */
+  top: 20px; /* Adjust as needed based on nav height */
+}
+
+.shopping-cart h4 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem; /* More space below title */
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.shopping-cart .list-group-item {
+  padding: 0.75rem 0; /* Adjust padding for items */
+  border-bottom: 1px solid var(--border-color); /* Separator for items */
+}
+.shopping-cart .list-group-item:last-child {
+  border-bottom: none; /* No border for the last item (total row) */
+}
+
+
+.shopping-cart .list-group-item h6 {
+  font-size: 0.95rem;
+  font-weight: 500; /* Slightly bolder item name */
+  color: var(--text-color);
+  margin-bottom: 0.2rem;
+}
+
+.shopping-cart .list-group-item small.text-muted {
+  font-size: 0.85rem;
+  color: #6c757d !important; /* Bootstrap muted color */
+}
+
+.shopping-cart .btn-outline-secondary,
+.shopping-cart .btn-outline-danger {
+  padding: 0.25rem 0.5rem; /* Smaller padding for icon buttons */
+  font-size: 0.8rem; /* Smaller font for icons */
+  border-radius: 4px;
+  margin: 0 0.15rem; /* Tighter spacing for buttons */
+}
+
+.shopping-cart .btn-outline-secondary:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.shopping-cart .btn-outline-danger:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+
+.shopping-cart .list-group-item span.text-muted { /* Price per item */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+.shopping-cart .list-group-item.d-flex.justify-content-between:last-of-type { /* Total row */
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  border-top: 2px solid var(--primary-color); /* Stronger separator for total */
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.shopping-cart .btn-success.w-100 { /* Proceed to Payment button */
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 50px; /* Pill shaped */
+  transition: background-color 0.3s ease;
+}
+
+.shopping-cart .btn-success.w-100:hover {
+  background-color: #e68a00; /* Darker accent */
+  border-color: #e68a00;
+}
+
+.shopping-cart p { /* Empty cart message */
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem 0;
+    color: #6c757d;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+  .shopping-cart {
+    position: static; /* Remove sticky positioning */
+    width: 100%;      /* Take full available width in its column */
+    top: auto;        /* Reset top property */
+    margin-top: 2rem; /* Add some space above the cart when it's a block */
+    margin-bottom: 2rem; /* Add some space below the cart */
+    /* The existing padding, border, border-radius, and box-shadow should still look fine.
+       No need to override min-width if it's not set, width: 100% will handle it.
+       Max-height is not currently set, so no need to adjust.
+    */
+  }
+
+  .shopping-cart h4 {
+    /* Optional: Adjust heading size or alignment for mobile if needed */
+    /* font-size: 1.3rem; */
+  }
+
+  /* Ensure buttons are still easily tappable */
+  .shopping-cart .btn-outline-secondary,
+  .shopping-cart .btn-outline-danger {
+    padding: 0.35rem 0.6rem; /* Slightly larger padding for easier touch */
+    font-size: 0.9rem;
+  }
+
+  .shopping-cart .btn-success.w-100 {
+    padding: 0.85rem;
+    font-size: 1.1rem;
+  }
+}
