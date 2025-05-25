@@ -1,0 +1,25 @@
+.hero-section {
+  /* Replace with an actual image URL or a more dynamic placeholder for the background */
+  background-image: url('https://placehold.co/1920x600/333333/FFFFFF?text=Hero+Image+Placeholder');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh; /* Adjust as needed */
+  color: white; /* Ensure text is white as per original HTML */
+}
+
+.hero-content {
+  /* Optional: Add a semi-transparent overlay to make text more readable if background is busy */
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* padding: 20px; */ /* Already handled by bootstrap classes mostly */
+  border-radius: 5px; /* Optional: if you want rounded corners for the content box */
+}
+
+/* Specific styling for h1 and p if Bootstrap defaults aren't enough for "modern/llamativo" */
+.hero-content h1 {
+    /* Example: Add text shadow for better readability or style */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+.hero-content .btn-light {
+    /* Ensure the button stands out */
+}

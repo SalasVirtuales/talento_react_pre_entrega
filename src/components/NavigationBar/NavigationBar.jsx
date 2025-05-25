@@ -1,0 +1,63 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'; // Using free-solid-svg-icons for consistency, adjust if different types are needed (e.g., far for regular)
+import './NavigationBar.css';
+
+function NavigationBar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black sticky-top main-nav">
+      <div className="container-fluid px-md-5">
+        <a className="navbar-brand" href="#">
+          <img src="https://placehold.co/100x40/FFFFFF/000000?text=PUMA" alt="PUMA Logo" style={{ height: '30px' }} />
+        </a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">EXTRA WEEK</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Nuevos</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Mujeres</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Hombres</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Niños</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Deportes</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Colecciones</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-danger" href="#">Outlet</a>
+            </li>
+          </ul>
+          <ul className="navbar-nav ms-auto d-flex flex-row">
+            <li className="nav-item me-3">
+              <a className="nav-link" href="#"><FontAwesomeIcon icon={faSearch} /></a>
+            </li>
+            <li className="nav-item me-3">
+              <a className="nav-link" href="#"><FontAwesomeIcon icon={faHeart} /></a> {/* Assuming fas fa-heart, if far fa-heart, import from @fortawesome/free-regular-svg-icons */}
+            </li>
+            <li className="nav-item me-3">
+              <a className="nav-link" href="#"><FontAwesomeIcon icon={faShoppingCart} /></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><FontAwesomeIcon icon={faUser} /></a> {/* Assuming fas fa-user, if far fa-user, import from @fortawesome/free-regular-svg-icons */}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default NavigationBar;

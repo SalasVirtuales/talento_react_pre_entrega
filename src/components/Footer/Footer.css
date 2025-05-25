@@ -1,0 +1,10 @@
+/* src/components/Footer/Footer.css */
+.footer-bs .list-unstyled a:hover {
+  text-decoration: underline !important; /* Ensure hover effect if not already present */
+}
+
+.footer-bs h5 {
+  margin-bottom: 1rem; /* Ensure spacing for headings */
+}
+
+/* Adjust icon sizes or colors if needed beyond props */
