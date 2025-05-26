@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react'; // Add useMemo
 import { Routes, Route } from 'react-router-dom'; // Import routing components
 import Layout from './components/Layout/Layout';
 // Import Page Components
@@ -20,7 +20,12 @@ import './App.css';
 function App() {
   const [cartItems, setCartItems] = useState([]);
   // Mock authentication state - will be expanded later
-  const [isAuthenticated, setIsAuthenticated] = useState(false); 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Calculate total quantity of items in the cart
+  const totalCartQuantity = useMemo(() => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  }, [cartItems]); // Recalculate only when cartItems changes
 
   const addToCart = (product) => {
     setCartItems(prevItems => {
@@ -54,8 +59,12 @@ function App() {
   const logout = () => setIsAuthenticated(false);
 
   return (
-    // Pass isAuthenticated and logout to Layout
-    <Layout isAuthenticated={isAuthenticated} logout={logout}>
+    // Pass isAuthenticated, logout, and totalCartQuantity to Layout
+    <Layout 
+      isAuthenticated={isAuthenticated} 
+      logout={logout} 
+      totalCartQuantity={totalCartQuantity} // Pass totalCartQuantity here
+    >
       <Routes>
         <Route 
           path="/" 

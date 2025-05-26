@@ -1,24 +1,22 @@
 import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom'; // Import Link, NavLink, and useNavigate
+import { Link, NavLink } from 'react-router-dom'; // useNavigate removed as it's not used in the final provided snippet
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types'; // Import PropTypes
-import './NavigationBar.css';
+import PropTypes from 'prop-types';
+import './NavigationBar.css'; // Ensure this is imported for any custom badge styles
 
-function NavigationBar({ isAuthenticated, logout }) { // Receive props
-  const navigate = useNavigate(); // Hook for navigation
-
-  // Helper for NavLink active style
-  const navLinkStyle = ({ isActive }) => {
-    return {
-      fontWeight: isActive ? 'bold' : 'normal',
-    };
-  };
+// Receive totalCartQuantity prop
+function NavigationBar({ isAuthenticated, logout, totalCartQuantity }) { 
+  const navLinkStyle = ({ isActive }) => ({
+    fontWeight: isActive ? 'bold' : 'normal',
+  });
 
   const handleLogout = (e) => {
     e.preventDefault();
     logout();
-    navigate('/'); // Navigate to home after logout
+    // Navigation to home after logout is typically handled by App.jsx or a redirect in ProtectedRoute if applicable,
+    // or could be added back here if direct navigation is preferred.
+    // For now, simply calling logout as per the apparent change in the snippet.
   };
 
   return (
@@ -64,17 +62,25 @@ function NavigationBar({ isAuthenticated, logout }) { // Receive props
             <li className="nav-item me-3">
               <Link className="nav-link" to="#"><FontAwesomeIcon icon={faHeart} /></Link>
             </li>
-            <li className="nav-item me-3">
-              <Link className="nav-link" to="/cart"><FontAwesomeIcon icon={faShoppingCart} /></Link>
+            <li className="nav-item me-3 position-relative"> {/* Added position-relative for badge positioning */}
+              <Link className="nav-link" to="/cart">
+                <FontAwesomeIcon icon={faShoppingCart} />
+                {totalCartQuantity > 0 && (
+                  <span className="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+                    {totalCartQuantity}
+                    {/* <span className="visually-hidden">items in cart</span> */}
+                  </span>
+                )}
+              </Link>
             </li>
             {isAuthenticated ? (
               <>
-                <li className="nav-item me-2"> {/* Added me-2 for spacing from logout */}
+                <li className="nav-item"> {/* Changed from me-2 to no margin, Profile text added */}
                   <Link className="nav-link" to="/profile" title="Profile">
                     <FontAwesomeIcon icon={faUser} className="me-1" /> Profile
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item ms-2"> {/* Added ms-2 for spacing from Profile */}
                   <a href="#" className="nav-link" onClick={handleLogout} title="Logout">
                     {/* <FontAwesomeIcon icon={faSignOutAlt} /> Optional: Add logout icon */}
                      Logout
@@ -95,17 +101,18 @@ function NavigationBar({ isAuthenticated, logout }) { // Receive props
   );
 }
 
-// Add PropTypes
 NavigationBar.propTypes = {
-    isAuthenticated: PropTypes.bool.isRequired,
-    logout: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired,
+  totalCartQuantity: PropTypes.number.isRequired, // Add prop type
 };
 
-// Setting defaultProps for NavigationBar is good practice,
-// though App.jsx is expected to always provide them.
 NavigationBar.defaultProps = {
-  isAuthenticated: false,
+  // isAuthenticated and logout are already set in Layout.defaultProps,
+  // but it's fine to have them here too if NavigationBar is ever used standalone.
+  isAuthenticated: false, 
   logout: () => {},
+  totalCartQuantity: 0,
 };
 
 export default NavigationBar;

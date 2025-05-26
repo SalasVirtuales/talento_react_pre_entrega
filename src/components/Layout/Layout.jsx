@@ -5,13 +5,16 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/Footer';
 import './Layout.css'; // Keep existing Layout.css import
 
-// Pass isAuthenticated and logout down to NavigationBar
-function Layout({ children, isAuthenticated, logout }) { 
+// Accept totalCartQuantity and pass it to NavigationBar
+function Layout({ children, isAuthenticated, logout, totalCartQuantity }) { 
   return (
     <>
       <TopBar />
-      {/* Pass auth props to NavigationBar */}
-      <NavigationBar isAuthenticated={isAuthenticated} logout={logout} />
+      <NavigationBar 
+        isAuthenticated={isAuthenticated} 
+        logout={logout} 
+        totalCartQuantity={totalCartQuantity} // Pass down
+      />
       <main className="main-content">
         {children}
       </main>
@@ -22,15 +25,17 @@ function Layout({ children, isAuthenticated, logout }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired, // Add prop type
-  logout: PropTypes.func.isRequired,       // Add prop type
+  isAuthenticated: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired,
+  totalCartQuantity: PropTypes.number.isRequired, // Add prop type for totalCartQuantity
 };
 
-// Set default props for isAuthenticated and logout if not always provided
-// (though in this setup App.jsx will always provide them)
+// Default prop for totalCartQuantity in case it's ever not provided,
+// although App.jsx should always provide it.
 Layout.defaultProps = {
   isAuthenticated: false,
-  logout: () => {}, // Placeholder, should be overridden by App.jsx
+  logout: () => {},
+  totalCartQuantity: 0, // Default to 0
 };
 
 export default Layout;
