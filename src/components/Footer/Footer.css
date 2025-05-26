@@ -1,0 +1,75 @@
+/* src/components/Footer/Footer.css */
+.bg-dark.text-white { /* Targeting the specific footer class from JSX */
+  background-color: var(--primary-color) !important; /* Use primary color for footer bg */
+  color: #EAEAEA; /* Lighter text for better contrast on primary color */
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.bg-dark.text-white h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FFFFFF; /* White headings */
+  margin-bottom: 1.25rem; /* More space below headings */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bg-dark.text-white .list-unstyled a {
+  color: #CED4DA; /* Slightly muted link color */
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-in-out;
+  padding: 0.25rem 0;
+  display: inline-block;
+}
+
+.bg-dark.text-white .list-unstyled a:hover {
+  color: var(--accent-color); /* Accent color on hover */
+  text-decoration: none; /* No underline, color change is enough */
+}
+
+.bg-dark.text-white .input-group .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-radius: 20px 0 0 20px; /* Rounded left side */
+}
+
+.bg-dark.text-white .input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bg-dark.text-white .input-group .btn-secondary { /* Newsletter button */
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #FFFFFF;
+  font-weight: 500;
+  border-radius: 0 20px 20px 0; /* Rounded right side */
+  transition: background-color 0.3s ease;
+}
+
+.bg-dark.text-white .input-group .btn-secondary:hover {
+  background-color: #e68a00; /* Darker accent */
+  border-color: #e68a00;
+}
+
+.bg-dark.text-white .me-3 svg { /* Social media icons */
+  font-size: 1.5rem; /* Larger icons */
+  transition: color 0.3s ease;
+}
+
+.bg-dark.text-white .me-3 svg:hover {
+  color: var(--accent-color); /* Accent color on hover */
+}
+
+.bg-dark.text-white hr {
+  border-color: rgba(255, 255, 255, 0.15); /* Lighter hr */
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bg-dark.text-white .text-center small {
+  font-size: 0.85rem;
+  color: #CED4DA;
+}

@@ -1,0 +1,97 @@
+/* src/components/NavigationBar/NavigationBar.css */
+.main-nav.navbar {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #444; /* Darker border for dark bg */
+}
+
+.main-nav .navbar-brand img {
+  height: 35px; /* Slightly larger logo */
+  vertical-align: middle;
+}
+
+.main-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75); /* Lighter text for better contrast on black */
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link:focus {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+.main-nav .nav-link.active {
+  color: #FFFFFF;
+  font-weight: 700;
+  /* border-bottom: 2px solid var(--accent-color); Remove if accent color clashes with white text */
+}
+
+.main-nav .nav-link.text-danger,
+.main-nav .nav-link.text-danger:hover {
+  color: var(--danger-color) !important; /* Ensure outlet link is always danger color */
+}
+
+
+.main-nav .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ensure icons are vertically aligned with text if needed */
+.main-nav .navbar-nav.ms-auto .nav-link svg {
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+/* Style for the list item containing the cart icon and badge 
+   to ensure proper stacking context if needed, though position-relative 
+   on the li in JSX should suffice. */
+.navbar-nav .nav-item.position-relative {
+  /* No specific styles needed here if Bootstrap's position-relative is enough */
+}
+
+/* Badge specific styles */
+.navbar-nav .nav-item .nav-link .badge {
+  /* Adjust font size if Bootstrap's default is too large/small for the icon */
+  font-size: 0.6em; /* Example: make it smaller */
+  
+  /* Nudge the position if Bootstrap's translate-middle isn't perfect.
+     These values depend heavily on the icon's size and shape. 
+     Positive values move down/right, negative move up/left.
+     The `top-0 start-100 translate-middle` classes set:
+     top: 0%; left: 100%; transform: translate(-50%, -50%);
+     So, we might adjust transform or top/left directly if needed.
+     For example, to move it slightly more to the top-right: */
+  
+  /* Option 1: Fine-tune with transform property */
+  /* transform: translate(-30%, -70%); */ /* Example: more up and less left */
+
+  /* Option 2: Override top/left/transform if needed (more verbose) */
+  /* top: -5px; */ /* Example: move it up a bit */
+  /* left: calc(100% - 5px); */ /* Example: move it slightly left from the 100% mark */
+
+  /* Add a very subtle border to make it pop if against a busy icon, optional */
+  /* border: 1px solid white; */
+
+  /* Ensure it's above other elements if there are z-index issues (unlikely here) */
+  /* z-index: 10; */
+
+  /* Padding can also be adjusted if Bootstrap's default is not ideal */
+  padding: 0.30em 0.50em; /* Example: adjust padding */
+}
+
+/* Ensure the icon itself has a consistent size if not already set 
+   This rule for .svg-inline--fa might be redundant if the one above it
+   (.main-nav .navbar-nav.ms-auto .nav-link svg) already covers it,
+   but added for specificity as per the prompt.
+*/
+.navbar-nav .nav-item .nav-link .svg-inline--fa { /* Targets FontAwesomeIcon */
+  font-size: 1.1rem; /* Or your desired icon size, ensuring consistency */
+  vertical-align: middle; /* Helps with alignment */
+}

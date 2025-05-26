@@ -1,0 +1,12 @@
+/* src/components/Layout/Layout.css */
+.main-content {
+  /* Adjust 250px based on combined height of header/nav and footer.
+     TopBar (~30px) + Nav (~60px) + Footer (~150px+) = ~240px.
+     It's an estimate; actual heights can vary with content and screen size.
+     Using a larger value ensures footer stays down.
+     Alternatively, use flexbox for a more robust sticky footer solution on App/Layout root.
+  */
+  min-height: calc(100vh - 300px); /* Increased a bit to be safer */
+  padding-top: 1.5rem; /* Add some default padding */
+  padding-bottom: 2.5rem; /* More padding at the bottom of main content */
+}
