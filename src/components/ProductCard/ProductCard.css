@@ -1,4 +1,4 @@
 .card-img-top {
-  aspect-ratio: 3 / 2; /* Maintain aspect ratio for images */
-  object-fit: cover; /* Ensure images cover the area without distortion */
+  aspect-ratio: 3 / 2; 
+  object-fit: cover; 
 }

@@ -27,7 +27,7 @@ function App() {
   const updateQuantity = (productId, newQuantity) => {
     setCartItems(prevItems => {
       if (newQuantity <= 0) {
-        return prevItems.filter(item => item.id !== productId); // Remove item if quantity is 0 or less
+        return prevItems.filter(item => item.id !== productId); 
       }
       return prevItems.map(item =>
         item.id === productId ? { ...item, quantity: newQuantity } : item

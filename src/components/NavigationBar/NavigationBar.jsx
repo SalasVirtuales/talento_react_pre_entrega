@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'; // Using free-solid-svg-icons for consistency, adjust if different types are needed (e.g., far for regular)
+import { faSearch, faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'; 
 import './NavigationBar.css';
 
 function NavigationBar() {
@@ -37,13 +37,13 @@ function NavigationBar() {
               <a className="nav-link" href="#"><FontAwesomeIcon icon={faSearch} /></a>
             </li>
             <li className="nav-item me-3">
-              <a className="nav-link" href="#"><FontAwesomeIcon icon={faHeart} /></a> {/* Assuming fas fa-heart, if far fa-heart, import from @fortawesome/free-regular-svg-icons */}
+              <a className="nav-link" href="#"><FontAwesomeIcon icon={faHeart} /></a> {}
             </li>
             <li className="nav-item me-3">
               <a className="nav-link" href="#"><FontAwesomeIcon icon={faShoppingCart} /></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><FontAwesomeIcon icon={faUser} /></a> {/* Assuming fas fa-user, if far fa-user, import from @fortawesome/free-regular-svg-icons */}
+              <a className="nav-link" href="#"><FontAwesomeIcon icon={faUser} /></a> {}
             </li>
           </ul>
         </div>

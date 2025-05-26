@@ -10,7 +10,7 @@ function Footer() {
     <footer className="bg-dark text-white py-5">
       <div className="container">
         <div className="row">
-          <div className="col-md-3 mb-4 mb-md-0"> {/* Adjusted mb for consistency */}
+          <div className="col-md-3 mb-4 mb-md-0"> {}
             <h5>Atención al Cliente</h5>
             <ul className="list-unstyled">
               <li><a href="#" className="text-white text-decoration-none">Contacto</a></li>
@@ -45,7 +45,7 @@ function Footer() {
             </form>
           </div>
         </div>
-        <hr className="my-4" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}/> {/* Added inline style for HR visibility on dark bg */}
+        <hr className="my-4" style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}/> {}
         <div className="text-center">
           <small>&copy; <span id="currentYear">{currentYear}</span> LEON S.A. Todos los derechos reservados.</small>
         </div>
