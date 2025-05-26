@@ -1,35 +1,34 @@
-/* src/components/ProductListingPage/ProductListingPage.css */
 .product-listing-page h2 {
-  font-weight: 700; /* Bolder heading */
+  font-weight: 700; 
   color: var(--primary-color);
-  margin-bottom: 2.5rem; /* More space below heading */
+  margin-bottom: 2.5rem;
 }
 
-/* Styling for Loading State */
+
 .product-listing-page .spinner-border {
   width: 4rem;
   height: 4rem;
-  color: var(--accent-color); /* Use accent color for spinner */
+  color: var(--accent-color);
   margin-bottom: 1rem;
 }
 
-.product-listing-page .loading-text { /* Assuming you add a p tag with this class */
+.product-listing-page .loading-text { 
   font-size: 1.2rem;
   color: var(--text-color);
 }
 
-/* Styling for Error State */
+
 .product-listing-page .alert-danger {
-  background-color: #f8d7da; /* Standard Bootstrap danger bg */
-  border-color: #f5c6cb; /* Standard Bootstrap danger border */
-  color: #721c24; /* Standard Bootstrap danger text */
+  background-color: #f8d7da; 
+  border-color: #f5c6cb; 
+  color: #721c24; 
   padding: 1.5rem;
   border-radius: 8px;
   font-size: 1.1rem;
 }
 
-/* Styling for No Products Found */
-.product-listing-page .no-products-message { /* Assuming you add a p tag with this class */
+
+.product-listing-page .no-products-message { 
   font-size: 1.2rem;
   color: var(--text-color);
   padding: 2rem;
@@ -39,4 +38,4 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* Ensure ProductItem cards have consistent bottom margin (already handled by col-... mb-4 in ProductListingPage.jsx) */
+

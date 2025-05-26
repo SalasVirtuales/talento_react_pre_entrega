@@ -1,8 +1,8 @@
 import React from 'react';
-import ProductCard from '../ProductCard/ProductCard'; // Adjust path as necessary
+import ProductCard from '../ProductCard/ProductCard'; 
 import './ProductList.css';
 
-// Placeholder data - in a real app, this would come from an API or state management
+
 const products = [
   {
     id: 1,
@@ -33,7 +33,7 @@ function ProductList() {
       <h2 className="text-center mb-4">Más Productos</h2>
       <div className="row">
         {products.map(product => (
-          <div className="col-md-4 mb-4" key={product.id}> {/* Changed mb-3 to mb-4 for a bit more spacing */}
+          <div className="col-md-4 mb-4" key={product.id}> {}
             <ProductCard
               imageUrl={product.imageUrl}
               title={product.title}

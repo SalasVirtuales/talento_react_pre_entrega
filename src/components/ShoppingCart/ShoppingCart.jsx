@@ -14,7 +14,7 @@ function ShoppingCart({ cartItems, removeFromCart, updateQuantity }) {
 
   const handleQuantityChange = (id, currentQuantity, delta) => {
     const newQuantity = currentQuantity + delta;
-    updateQuantity(id, newQuantity); // newQuantity can be 0 or less, App.jsx handles removal
+    updateQuantity(id, newQuantity); // 
   };
 
   return (
@@ -62,7 +62,7 @@ function ShoppingCart({ cartItems, removeFromCart, updateQuantity }) {
               <strong>{formatPrice(total)}</strong>
             </li>
           </ul>
-          <button className="btn btn-success w-100">Proceder al Pago</button>
+          <button className="btn btn-success w-100">Pagar</button>
         </>
       )}
     </div>

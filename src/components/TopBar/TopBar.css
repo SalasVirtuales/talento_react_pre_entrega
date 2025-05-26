@@ -1,17 +1,16 @@
-/* src/components/TopBar/TopBar.css */
 .top-bar {
-  background-color: #f8f9fa; /* Default Bootstrap light, can be customized */
-  border-bottom: 1px solid var(--border-color); /* Subtle separation */
-  padding-top: 0.35rem; /* Reduced padding */
-  padding-bottom: 0.35rem; /* Reduced padding */
-  font-size: 0.85rem; /* Slightly smaller font for top bar */
+  background-color: #f8f9fa;
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  font-size: 0.85rem;
 }
 
 .top-bar a.text-dark:hover {
-  color: var(--secondary-color) !important; /* Use secondary color for hover */
+  color: var(--secondary-color) !important;
   text-decoration: underline;
 }
 
 .top-bar small {
-  line-height: 1.5; /* Ensure text is vertically centered well */
+  line-height: 1.5; 
 }

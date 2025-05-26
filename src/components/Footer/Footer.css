@@ -1,7 +1,7 @@
-/* src/components/Footer/Footer.css */
-.bg-dark.text-white { /* Targeting the specific footer class from JSX */
-  background-color: var(--primary-color) !important; /* Use primary color for footer bg */
-  color: #EAEAEA; /* Lighter text for better contrast on primary color */
+
+.bg-dark.text-white { 
+  background-color: var(--primary-color) !important;
+  color: #EAEAEA; 
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
@@ -9,14 +9,14 @@
 .bg-dark.text-white h5 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #FFFFFF; /* White headings */
-  margin-bottom: 1.25rem; /* More space below headings */
+  color: #FFFFFF; 
+  margin-bottom: 1.25rem; 
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .bg-dark.text-white .list-unstyled a {
-  color: #CED4DA; /* Slightly muted link color */
+  color: #CED4DA; 
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease-in-out;
@@ -25,46 +25,46 @@
 }
 
 .bg-dark.text-white .list-unstyled a:hover {
-  color: var(--accent-color); /* Accent color on hover */
-  text-decoration: none; /* No underline, color change is enough */
+  color: var(--accent-color); 
+  text-decoration: none; 
 }
 
 .bg-dark.text-white .input-group .form-control {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
-  border-radius: 20px 0 0 20px; /* Rounded left side */
+  border-radius: 20px 0 0 20px; 
 }
 
 .bg-dark.text-white .input-group .form-control::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.bg-dark.text-white .input-group .btn-secondary { /* Newsletter button */
+.bg-dark.text-white .input-group .btn-secondary { 
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: #FFFFFF;
   font-weight: 500;
-  border-radius: 0 20px 20px 0; /* Rounded right side */
+  border-radius: 0 20px 20px 0;
   transition: background-color 0.3s ease;
 }
 
 .bg-dark.text-white .input-group .btn-secondary:hover {
-  background-color: #e68a00; /* Darker accent */
+  background-color: #e68a00; 
   border-color: #e68a00;
 }
 
-.bg-dark.text-white .me-3 svg { /* Social media icons */
-  font-size: 1.5rem; /* Larger icons */
+.bg-dark.text-white .me-3 svg { 
+  font-size: 1.5rem; 
   transition: color 0.3s ease;
 }
 
 .bg-dark.text-white .me-3 svg:hover {
-  color: var(--accent-color); /* Accent color on hover */
+  color: var(--accent-color); 
 }
 
 .bg-dark.text-white hr {
-  border-color: rgba(255, 255, 255, 0.15); /* Lighter hr */
+  border-color: rgba(255, 255, 255, 0.15);
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
 }

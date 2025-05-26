@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroSection.css'; // We'll create this next
+import './HeroSection.css';
 
 function HeroSection() {
   return (
@@ -8,8 +8,8 @@ function HeroSection() {
         <div className="row">
           <div className="col-md-6 col-lg-5">
             <div className="hero-content p-4 p-md-0">
-              <h1 className="display-3 fw-bold">Titulo Banner Cabecera</h1>
-              <p className="lead mb-4">Subtitulo Banner Cabecera</p>
+              <h1 className="display-3 fw-bold">Titulo Banner</h1>
+              <p className="lead mb-4">Subtitulo Banner</p>
               <a href="#" className="btn btn-light btn-lg rounded-0 text-uppercase">OFERTAS</a>
             </div>
           </div>

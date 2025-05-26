@@ -18,16 +18,13 @@ function ProductListingPage({ addToCart }) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        // The API returns products with 'title', 'price', 'description', 'image', 'id'
-        // We need to map them to 'name' and 'imageUrl' if ProductItem expects that,
-        // or update ProductItem to use 'title' and 'image'.
-        // For now, let's adapt the data here:
+        
         const adaptedProducts = data.map(p => ({
           id: p.id,
-          name: p.title, // Map title to name
+          name: p.title,
           description: p.description,
           price: p.price,
-          imageUrl: p.image, // Map image to imageUrl
+          imageUrl: p.image,
         }));
         setProducts(adaptedProducts);
       } catch (e) {
@@ -39,7 +36,7 @@ function ProductListingPage({ addToCart }) {
     };
 
     fetchProducts();
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []); 
 
   if (isLoading) {
     return (
@@ -47,7 +44,7 @@ function ProductListingPage({ addToCart }) {
         <div className="spinner-border text-primary" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
-        <p>Loading products...</p>
+        <p>Cargando productos...</p>
       </div>
     );
   }

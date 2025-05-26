@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductItem.css';
 
-// Simple placeholder for product price, adapt as needed
+
 const formatPrice = (price) => {
   return `$${price ? price.toFixed(2) : 'N/A'}`;
 }
 
 function ProductItem({ product, addToCart }) {
   if (!product) {
-    return null; // Or some placeholder/error
+    return null; 
   }
 
   return (
