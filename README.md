@@ -112,4 +112,3 @@ Se implementa un sistema de autenticación simulado para fines de demostración:
 *   Funcionalidades avanzadas de búsqueda y filtrado de productos.
 *   Implementación de categorías de productos y vistas específicas por categoría.
 *   Reseñas y valoraciones de usuarios para los productos.
-Por favor, revisa esta última parte de la traducción. Con esto, tendríamos el README completo en español.
